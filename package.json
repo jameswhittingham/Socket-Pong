@@ -1,0 +1,30 @@
+{
+  "name": "pong",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+    "passport": "~0.1.17",
+    "express": "~3.3.4",
+    "passport-local": "~0.1.6",
+    "lodash": "~1.3.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-cssmin": "~0.6.0",
+    "grunt-express": "~1.0.0",
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-watch": "https://github.com/blai/grunt-contrib-watch/tarball/master",
+    "grunt-open": "~0.2.0",
+    "grunt-concurrent": "~0.3.0",
+    "matchdep": "~0.1.2",
+    "connect-livereload": "~0.2.0",
+    "grunt-contrib-less": "latest",
+    "socket.io": "^1.3.5",
+    "express": "^4.8.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}

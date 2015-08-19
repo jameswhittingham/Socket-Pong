@@ -1,0 +1,89 @@
+//
+// Forms
+// --------------------------------------------------
+
+input[type=textbox] {
+	background: none;
+	border: none;
+	color: @brand-primary;
+
+	.font-size(18);
+}
+
+input,
+button {
+	outline: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		outline: none !important;
+	}
+}
+
+.btn {
+	.font-size(20);
+
+	&.btn-primary {
+		background: none;
+		border-radius: 0px;
+		border: none;
+		color: @brand-primary;
+		position: relative;
+
+		span {
+			padding: 0;
+			position: absolute;
+
+			.transition(all 0.3s);
+
+			&.top {
+				border-top: solid 1px @brand-primary;
+				left: 0;
+				top: 0px;
+				width: 0%;
+			}
+
+			&.left {
+				border-left: solid 1px @brand-primary;
+				bottom: 0px;
+				height: 0%;
+				left: 0px;
+			}
+
+			&.right {
+				border-right: solid 1px @brand-primary;
+				height: 0%;
+				right: 0px;
+				top: 0px;
+			}
+
+			&.bottom {
+				border-bottom: solid 1px @brand-primary;
+				bottom: 0px;
+				right: 0px;
+				width: 0%;
+			}
+		}
+
+		&:hover {
+			span {
+				&.top {
+					width: 100%;
+				}
+
+				&.left {
+					height: 100%;
+				}
+
+				&.right {
+					height: 100%;
+				}
+
+				&.bottom {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>Pong</title>
+    <link rel="stylesheet" type="text/css" href="/common/styles/main.css">
+    <link rel="icon" href="/common/images/favicon.ico">
+  </head>
+
+  <body ng-controller="pongController" ng-cloak pong-game ng-keydown="movePaddle($event)">
+
+
+<div class="data">
+  Increment: {{ ball.increment }}<br/>
+  Offset-top: {{ ball.directionOffset.top }} <br/>
+  Offset-left: {{ ball.directionOffset.left }} <br/>
+</div>
+
+    <div class="bottom full-height" style="padding: 0 {{ win.padding/2 }}% {{ win.padding/2 }}% {{ win.padding/2 }}%;">
+      <div class="board full-height">
+        <div class="start-container">
+
+          <div class="text-center username-container" ng-class="{ 'selected' : start == true }">
+            <input type="textbox" id="username" placeholder="Your name" class="text-center txt-username" ng-disabled="start == true" ng-class="{ 'selected' : start == true }" ng-model="win.player.username">
+            <input type="textbox" id="competitor" placeholder="Competitors name" class="text-center txt-competitor" ng-disabled="start == true" ng-class="{ 'selected' : start == true }" ng-model="win.competitor.username" ng-hide="start == true && win.competitor.username == ''"><br/>
+          </div>
+
+          <div class="text-center game-type-container">
+            <span ng-show="start != true && win.competitor.username == ''">OR</span><br/>
+            <button ng-cloak ng-show="start != true && win.competitor.username == ''" class="btn btn-primary" ng-click="start = true; joinRoom(win.player.username, win.player.username);">
+              <span class="top"></span>
+              <span class="left"></span>
+              <span class="right"></span>
+              <span class="bottom"></span>
+              Ready
+            </button>
+            <button ng-cloak ng-show="start != true && win.competitor.username != ''" class="btn btn-primary" ng-click="start = true; joinRoom(win.player.username, win.competitor.username);">
+              <span class="top"></span>
+              <span class="left"></span>
+              <span class="right"></span>
+              <span class="bottom"></span>
+              Join
+            </button>
+            <button ng-cloak ng-show="start == true && win.gameOn != true;" class="btn btn-primary" ng-click="ball.directionOffset.top = 1; ball.directionOffset.left = -0.5; ball.opacity = 1; win.gameOn = true;">
+              <span class="top"></span>
+              <span class="left"></span>
+              <span class="right"></span>
+              <span class="bottom"></span>
+              Play
+            </button>
+          </div>
+        </div>
+
+        <div class="ball" style="left:{{ ball.position.left }}%; padding:{{ ball.width }}%; top:{{ ball.position.top }}%; opacity: {{ ball.opacity }}"></div>
+        <div class="paddle" style="bottom:{{ paddle.position.bottom }}%; height:{{ paddle.height }}%; left:{{ paddle.position.left }}%; width:{{ paddle.width }}%;"></div>
+      </div>
+    </div>
+  </body>
+
+  <script src="/common/scripts/socket.io-1.3.5.js"></script>
+  <script src="/common/scripts/jquery-1.11.1.js"></script>
+  <script src="/common/scripts/angular.js"></script>
+  <script src="/common/scripts/controllers.js"></script>
+  <script src="/common/scripts/directives.js"></script>
+  <script src="/common/scripts/services.js"></script>
+  <script src="/common/scripts/app.js"></script>
+
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "pong",
+  "version": "0.0.0",
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.0"
+  }
+}

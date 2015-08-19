@@ -1,0 +1,17 @@
+//
+// Mixins
+// --------------------------------------------------
+
+// Font sizing using REM
+.font-size(@font-size:16){
+	@rem:(@font-size / 10);
+	font-size:@font-size * 1px;
+	font-size:~"@{rem}rem";
+}
+
+.border-radius (@radius) {
+	.border-top-radius(@radius);
+	.border-right-radius(@radius);
+	.border-bottom-radius(@radius);
+	.border-left-radius(@radius);
+}
